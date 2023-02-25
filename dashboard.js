@@ -26,10 +26,21 @@ form.addEventListener("submit", (e)=> {
             "name": currentUser.name,
             "token": currentUser.token,
         }
+
+        // update the password in users also
+        let users = JSON.parse(localStorage.users);
+        users = users.map((user)=> {
+            if(user.email == currentUser.email) {
+                user.password = newPass.value;
+            }
+            return user;
+        })
+        
+        localStorage.setItem("users", JSON.stringify(users));
+
         // update the currentUser state
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
         alert("Password changed successfully");
-        //console.log(currentUser);
     }
 })
 
@@ -38,5 +49,5 @@ form.addEventListener("submit", (e)=> {
 logout.addEventListener("click", ()=> {
     currentUser = null;
     localStorage.setItem("currentUser", null);
-    window.location.href = "./index.html"; // redirect user to home page after logging out
+    window.location.href = "./login.html"; // redirect user to login page after logging out
 })
