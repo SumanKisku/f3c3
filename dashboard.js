@@ -4,29 +4,39 @@ const oldPass = document.getElementById("old-password");
 const newPass = document.getElementById("new-password");
 const confirmNewPass = document.getElementById("confirm-new-password");
 const form = document.getElementById("form");
+const logout = document.getElementById("logout");
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-console.log(currentUser);
+// set name and email in dashboard
 username.innerText = currentUser.name;
 email.innerText = currentUser.email;
 
-
+// change current password
 form.addEventListener("submit", (e)=> {
-    e.preventDefault();
-    if(oldPass.value !== currentUser.pass) {
+    // e.preventDefault();
+    if(oldPass.value !== currentUser.pass) { // if old pass and current pass doesn't match
         alert("Old password isn't currect");
-    } else if(newPass.value !== confirmNewPass.value) {
+    } else if(newPass.value !== confirmNewPass.value) { // if new pass and confirm pass doesn't match
         alert("New password doesn't match, enter correctly");
     }
-    else {
+    else { // if all form input is correct change current password in currentUser
         currentUser = {
             "email": currentUser.email,
             "pass": newPass.value,
             "name": currentUser.name,
             "token": currentUser.token,
         }
-        localStorage.removeItem("currentUser");
+        // update the currentUser state
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        alert("Password changed successfully");
         //console.log(currentUser);
     }
+})
+
+// logout
+
+logout.addEventListener("click", ()=> {
+    currentUser = null;
+    localStorage.setItem("currentUser", null);
+    window.location.href = "./index.html"; // redirect user to home page after logging out
 })
