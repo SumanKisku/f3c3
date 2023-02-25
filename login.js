@@ -24,6 +24,7 @@ form.addEventListener("submit", (e)=> {
         alert("Can't fint any account with this details, check your email and password");
     } else {
         // teacher found
+        // make currentUser in localStorage and redirect to dashboard
         let currentUser = {
             "email": teacher.email,
             "pass": teacher.password,
@@ -35,6 +36,12 @@ form.addEventListener("submit", (e)=> {
         window.location.href = "./dashboard.html";
     }
 })
+
+// automatic login if currentUser is not equal to null
+let currectUser = JSON.parse(localStorage.getItem("currentUser"));
+if(currectUser) {
+    window.location.href = "./dashboard.html";
+}
 
 // generate random string
 function generateRandomString() {
