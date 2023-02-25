@@ -7,13 +7,12 @@ const form = document.getElementById("form");
 
 // if users not found in localStorage initialize to an empty array or get the users instead
 let users = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : [];
-//console.log(users);
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
-    if(password.value !== confirmPass.value) {
+    if(password.value !== confirmPass.value) { // If password doesn't match show an alert
         alert("Passwords doesn't match");
-    } else {
+    } else { // create a new user and redirect to login page
         let user = {
             "name": fullname.value,
             "email": email.value,
