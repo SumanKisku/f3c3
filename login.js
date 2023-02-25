@@ -4,12 +4,11 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
-    const teachers = localStorage.users ? JSON.parse(localStorage.users) : []; // if there's users in localStorage then assign an empty array
+    const teachers = localStorage.users ? JSON.parse(localStorage.users) : []; // if there's not users in localStorage then assign an empty array
 
     // find teacher in users
     const findTeacher = () => {
         let teacher;
-
         teachers.forEach((user)=> {
             if(user.email == email.value && user.password == password.value) {
                 teacher = user;
