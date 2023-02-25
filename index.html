@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Portal - f3c3 - Suman Kisku</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a class="logo" href="./index.html">Teacher's Portal</a>
+        <ul>
+            <li><a href="./index.html">Sign Up</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Teacher's Signup</h1>
+        <form id="form">
+            <input type="text" name="full-name" id="name" placeholder="Full Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" minlength="8" required>
+            <input type="password" name="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button class="btn" type="submit" id="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

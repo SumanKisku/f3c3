@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Portal - f3c3 - Suman Kisku</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a class="logo" href="./index.html">Teacher's Portal</a>
+        <ul>
+            <li><a href="./index.html">Sign Up</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Teacher's Dashboard</h1>
+        <p>Welcome back: <span id="username"></span></p>
+        <p>Your Email ID: <span id="email"></span></p>
+        <form id="form">
+            <h3>Change Password</h3>
+            <input type="password" name="password" id="old-password" placeholder="Old Password" required>
+            <input type="password" name="new-password" id="new-password" placeholder="New Password" required>
+            <input type="password" name="confirm-new-password" id="confirm-new-password" placeholder="Confirm New Password" required>
+            <button class="btn" type="submit">Change</button>
+        </form>
+        <button class="btn" id="logout">Logout</button>
+    </div>
+    <script src="./dashboard.js"></script>
+</body>
+</html>
