@@ -29,11 +29,11 @@ form.addEventListener("submit", (e)=> {
 // check there's an user with the same email
 function userAlreadyExists() {
     let bool = false;
-    for(let i = 0; i < users.length; i++) {
-        if(users.email == email.value) {
+    users.forEach((user)=> {
+        if(user.email == email.value) {
             bool = true;
-            break;
         }
-    }
-    return bool ? true : false;
+    })
+    
+    return bool
 }

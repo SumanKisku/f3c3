@@ -19,6 +19,9 @@ form.addEventListener("submit", (e)=> {
     } else if(newPass.value !== confirmNewPass.value) { // if new pass and confirm pass doesn't match
         alert("New password doesn't match, enter correctly");
     }
+    else if(newPass.value == currentUser.pass) { // new pass can't be same as old pass
+        alert("New password can't be same as old password");
+    }
     else { // if all form input is correct change current password in currentUser
         currentUser = {
             "email": currentUser.email,
